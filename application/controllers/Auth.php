@@ -97,7 +97,7 @@ class Auth extends MY_Controller
             );
 
             $async = false;
-            $mandrillResult = $mandrill->messages->send($message, $async);      
+            //$mandrillResult = $mandrill->messages->send($message, $async);      
 
             
             $insertData = array(

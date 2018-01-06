@@ -98,24 +98,43 @@ jQuery(document).ready(function($) {
 
 <!-- bottom-top -->
 <!-- smooth scrolling -->
-<script type="text/javascript">
-        $(document).ready(function() {
-        /*
-                var defaults = {
-                containerID: 'toTop', // fading element id
-                containerHoverID: 'toTopHover', // fading element hover id
-                scrollSpeed: 1200,
-                easingType: 'linear'
-                };
-        */
-        $().UItoTop({ easingType: 'easeOutQuart' });
-        });
-</script>
 <a href="#" id="toTop" style="display: block;"> <span id="toTopHover" style="opacity: 1;"> </span></a>
 <!-- //smooth scrolling -->
 <!--// bottom-top -->
 <script type="text/javascript" src="<?php echo base_url();?>public/frontEnd/js/bootstrap-3.1.1.min.js"></script>
 
+<script type="text/javascript" src="<?php echo base_url();?>public/js/jquery_disable_autocomplete_master/jquery.disable.autocomplete.min.js"></script>
+   
+<link rel="stylesheet" href="<?php echo base_url();?>public/js/jQuery-Validation-Engine-master/css/validationEngine.jquery.css" type="text/css"/>
+<link rel="stylesheet" href="<?php echo base_url();?>public/js/jQuery-Validation-Engine-master/css/template.css" type="text/css"/>
+
+<script src="<?php echo base_url();?>public/js/jQuery-Validation-Engine-master/js/languages/jquery.validationEngine-en.js" type="text/javascript" charset="utf-8"></script>
+<script src="<?php echo base_url();?>public/js/jQuery-Validation-Engine-master/js/jquery.validationEngine.js" type="text/javascript" charset="utf-8"></script>
+
+<script>
+$(document).ready(function(){
+    
+    /*
+    var defaults = {
+    containerID: 'toTop', // fading element id
+    containerHoverID: 'toTopHover', // fading element hover id
+    scrollSpeed: 1200,
+    easingType: 'linear'
+    };
+    */
+    $().UItoTop({ easingType: 'easeOutQuart' });
+    
+    $('[name="emailOrMobile"]').disableAutocomplete();
+    $('[name="password"]').disableAutocomplete();
+    
+    $("#loginForm").validationEngine({promptPosition: 'inline'});
+    
+    
+    //$("#forgotPasswordForm").validationEngine({promptPosition: 'inline'});    
+});
+</script>
+
 </body>
 </html>
+
 

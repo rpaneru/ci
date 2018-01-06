@@ -46,11 +46,11 @@ echo $this->session->flashdata('redirectGuestMessage');
 							<h4>Login Your Account</h4>
 							<!--newsletter-->
 							<div class="login-main wthree">
-							  <form action="<?php echo base_url();?>index.php/auth/logIn" method="post">
-								<input type="text" placeholder="Email Or Mobile" required="" name="emailOrMobile">
-								<input type="password" placeholder="Password" name="password">
+                                                            <form action="<?php echo base_url();?>index.php/auth/logIn" method="post" name="loginForm" id="loginForm" >
+                                                                <input type="text" placeholder="Email Or Mobile" name="emailOrMobile">
+                                                                <input type="password" placeholder="Password" name="password">
 								<input type="submit" value="Login">
-							</form>
+                                                            </form>
                                                             <a href="#" data-toggle="modal" data-target="#myModalFP">Forgot Password</a>
 							</div>
 						<!--//newsletter-->
@@ -102,10 +102,10 @@ echo $this->session->flashdata('redirectGuestMessage');
                 <h4>Forgot Password</h4>
                 <!--forgot password-->
                 <div class="login-main wthree">
-                <form action="<?php echo base_url();?>index.php/auth/forgotPassword" method="post">
-                    <input type="text" placeholder="Email Or Mobile" required="" name="emailOrMobile">                    
-                    <input type="submit" value="Submit">
-                </form>
+                    <form action="<?php echo base_url();?>index.php/auth/forgotPassword" method="post" name="forgotPasswordForm" id="forgotPasswordForm">
+                        <input type="text" placeholder="Email Or Mobile" name="emailOrMobile1">                    
+                        <input type="submit" value="Submit">
+                    </form>
                 </div>
                 <!--//forgot password-->
             </div>
@@ -201,7 +201,3 @@ echo $this->session->flashdata('redirectGuestMessage');
 		<!-- //Slider -->
 	</div>
 </div>
-
-
-
-
