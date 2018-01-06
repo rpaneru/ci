@@ -1,3 +1,7 @@
+<?php
+echo $this->session->flashdata('redirectGuestMessage');
+?>
+
 <div class="main-w3layouts" id="home">
 	<!--top-bar-->
 	<div class="top-search-bar">
@@ -197,3 +201,7 @@
 		<!-- //Slider -->
 	</div>
 </div>
+
+
+
+

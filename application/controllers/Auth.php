@@ -69,53 +69,73 @@ class Auth extends MY_Controller
             );
         }
 
-        $userData = $this->UserModel->getValCols('','users',$where,'result');       
-
-        
-        
-        //$this->load->model("EmailLogModel");
-        //$relayerData = $this->EmailLogModel->getValCols(array('id','fromName','fromEmail'),'smtpRelayer',array( array('column'=>'status','value'=>'0')),'result');
+        $result = $this->UserModel->getValCols('','users',$where,'result');       
+        $userData = $result[0];
                 
-        $this->load->library("phpmailer_library");
+        $this->load->model("EmailLogModel");
+        $result = $this->EmailLogModel->getValCols(array('id','fromName','fromEmail'),'smtpRelayer',array( array('column'=>'status','value'=>'0')),'result');
+        $relayerData =  $result[0]; 
         
+        $this->load->library("mandrill_library");
+        $mandrill = $this->mandrill_library->load();
         
-        $objMail = $this->phpmailer_library->load();
-        
-        die;
-        
-        $objMail->setFrom($userData->email, $userData->name);
-        $objMail->addAddress($relayerData[0]->fromEmail, $relayerData[0]->fromName);        
-        $objMail->Subject = 'Reset Password';
-        $objMail->Body = 'Click here you reset your password';
-        
-        $res = $objMail->send();
-        var_dump($res);
-        
-        $res = true;
-        
-        if(!$res) 
+        try 
         {
-          echo 'Message was not sent.';
-          echo 'Mailer error: ' . $objMail->ErrorInfo;
-        } 
-        else 
-        {                        
-            $insertData = array(
-                                'smtpRelayerId'=>$relayerData[0]->id,
-                                'emailOrigin'=>'Website',
-                                'messageId'=>'',
-                                'controllerFunction'=>'Auth/forgotPassword',                                
-                                'emailFrom'=>$relayerData[0]->fromEmail,
-                                'userIdTo'=>$userData->userId,
-                                'emailTo'=>$userData->email,
-                                'subject'=>$objMail->Subject,
-                                'body'=>$objMail->Body,
-                                'dateTime'=>date("Y-m-d H:i:s"),
-                            );
+            $message = array(
+                'html' => '<p>Click here you reset your password</p>',
+                'text' => 'Click here you reset your password',
+                'subject' => 'Reset Password',
+                'from_email' => $relayerData->fromEmail,
+                'from_name' => $relayerData->fromName,
+                'to' => array(
+                    array(
+                        'email' => $userData->email,
+                        'name' => $userData->name,
+                        'type' => 'to'
+                    )
+                )
+            );
+
+            $async = false;
+            $mandrillResult = $mandrill->messages->send($message, $async);      
+
             
-            $this->EmailLogModel->insertData('emailLog',$insertData);
+            $insertData = array(
+                'smtpRelayerId'=>$relayerData->id,
+                'emailOrigin'=>'Website',
+                'messageId'=>$mandrillResult[0]['_id'],
+                'controllerFunction'=>'Auth/forgotPassword',                                
+                'emailFrom'=>$relayerData->fromEmail,
+                'userIdTo'=>$userData->userId,
+                'emailTo'=>$userData->email,
+                'subject'=>$message['subject'],
+                'body'=>$message['text'],
+                'dateTime'=>date("Y-m-d H:i:s"),
+                'status'=>$mandrillResult[0]['status']
+            );
+                         
+            if( $mandrillResult[0]['status'] == 'sent' )
+            {               
+                $this->session->set_flashdata('redirectGuestMessage', 'Email sent');
+            }
+            elseif( $mandrillResult[0]['status'] == 'queued' )
+            {               
+                $this->session->set_flashdata('redirectGuestMessage', 'Email queued');
+            }
+            elseif( $mandrillResult[0]['status'] == 'error' )
+            {                               
+                $insertData['reject_reason']= $mandrillResult[0]['reject_reason'];
+                $this->session->set_flashdata('redirectGuestMessage', 'Contact with admin');
+            }
+                        
+            $this->EmailLogModel->insertData('emailLog',$insertData);            
+        } 
+        catch(Mandrill_Error $e) 
+        {
+            $this->session->set_flashdata('redirectGuestMessage', 'Email error occurred: ' . get_class($e) . ' - ' . $e->getMessage());            
+            throw $e;
         }
 
-
+        redirect(base_url(), 'location');
     }
 }
