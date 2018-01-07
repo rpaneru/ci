@@ -1,7 +1,3 @@
-<?php
-echo $this->session->flashdata('redirectGuestMessage');
-?>
-
 <div class="main-w3layouts" id="home">
 	<!--top-bar-->
 	<div class="top-search-bar">
@@ -119,12 +115,12 @@ echo $this->session->flashdata('redirectGuestMessage');
         
         
         
-				<div class="search">
+<!--				<div class="search">
 						<form action="#" method="post">
 							<input type="search" placeholder="Search Here..." required="" />
 							<input type="submit" value=" ">
 						</form>
-				</div>
+				</div>-->
 					<div class="clearfix"></div>
 	<!--//top-bar-->
 	<!-- navigation -->

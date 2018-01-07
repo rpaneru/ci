@@ -31,8 +31,6 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
     if($guestFooter){echo $guestFooter;}
     ?>
 
-
-
 <!-- js -->
 <script type="text/javascript" src="<?php echo base_url();?>public/frontEnd/js/jquery-2.1.4.min.js"></script>
 
@@ -122,9 +120,10 @@ $(document).ready(function(){
     */
     $().UItoTop({ easingType: 'easeOutQuart' });
         
-    $("#subscribeForm").validationEngine({promptPosition: 'inline'});
-    $("#loginForm").validationEngine({promptPosition: 'inline'});    
-    $("#forgotPasswordForm").validationEngine({promptPosition: 'inline'});    
+    //$("#subscribeForm").validationEngine({promptPosition: 'inline'});
+    //$("#loginForm").validationEngine({promptPosition: 'inline'});    
+    //$("#forgotPasswordForm").validationEngine({promptPosition: 'inline'});    
+    //$("#contactUsForm").validationEngine({promptPosition: 'inline'});    
 });
 </script>
 

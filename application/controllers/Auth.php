@@ -11,6 +11,7 @@ class Auth extends MY_Controller
         $this->load->model("AuthModel");
         $this->load->model("UserModel");
         
+        
         if ($this->AuthModel->logIn($emailOrMobile, $password) == 1) 
         {
             if(is_numeric($emailOrMobile))

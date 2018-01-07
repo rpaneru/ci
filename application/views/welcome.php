@@ -1,4 +1,3 @@
-
 <!--main-content-->
 
 <!--about-->
@@ -94,7 +93,7 @@
 			</div>
 	</div>
 	<div class="about-info">
-		<img src="public/frontEnd/images/ab.jpg" alt="about-image">
+		<img src="<?php echo base_url();?>public/frontEnd/images/ab.jpg" alt="about-image">
 		<div class="right-agile">
 			<h5>Educational</h5>
 			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Ut enim ad minim veniam Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
@@ -110,35 +109,35 @@
 		<h3>Services</h3>
 		<div class="col-md-2 services-gd text-center" data-wow-delay=".5s">
 			<div class="hi-icon-wrap hi-icon-effect-9 hi-icon-effect-9a">
-				<a href="#" class="hi-icon"><img src="public/frontEnd/images/book.png" alt=" " /></a>
+				<a href="#" class="hi-icon"><img src="<?php echo base_url();?>public/frontEnd/images/book.png" alt=" " /></a>
 			</div>
 			<h4>Service 1</h4>
 			<p>Lorem Ipsum</p>
 		</div>
 		<div class="col-md-2 services-gd text-center" data-wow-delay=".5s">
 			<div class="hi-icon-wrap hi-icon-effect-9 hi-icon-effect-9a">
-				<a href="#" class="hi-icon"><img src="public/frontEnd/images/edu.png" alt=" " /></a>
+				<a href="#" class="hi-icon"><img src="<?php echo base_url();?>public/frontEnd/images/edu.png" alt=" " /></a>
 			</div>
 			<h4>Service 2</h4>
 			<p>Lorem Ipsum</p>
 		</div>
 		<div class="col-md-2 services-gd text-center" data-wow-delay=".5s">
 			<div class="hi-icon-wrap hi-icon-effect-9 hi-icon-effect-9a">
-				<a href="#" class="hi-icon"><img src="public/frontEnd/images/uni.png" alt=" " /></a>
+				<a href="#" class="hi-icon"><img src="<?php echo base_url();?>public/frontEnd/images/uni.png" alt=" " /></a>
 			</div>
 			<h4>Service 3</h4>
 			<p>Lorem Ipsum</p>
 		</div>
 		<div class="col-md-2 services-gd text-center" data-wow-delay=".5s">
 			<div class="hi-icon-wrap hi-icon-effect-9 hi-icon-effect-9a">
-				<a href="#" class="hi-icon"><img src="public/frontEnd/images/hourglass.png" alt=" " /></a>
+				<a href="#" class="hi-icon"><img src="<?php echo base_url();?>public/frontEnd/images/hourglass.png" alt=" " /></a>
 			</div>
 			<h4>Service 4</h4>
 			<p>Lorem Ipsum</p>
 		</div>
 		<div class="col-md-2 services-gd text-center" data-wow-delay=".5s">
 			<div class="hi-icon-wrap hi-icon-effect-9 hi-icon-effect-9a">
-				<a href="#" class="hi-icon"><img src="public/frontEnd/images/book2.png" alt=" " /></a>
+				<a href="#" class="hi-icon"><img src="<?php echo base_url();?>public/frontEnd/images/book2.png" alt=" " /></a>
 			</div>
 			<h4>Service 5</h4>
 			<p>Lorem Ipsum</p>
@@ -157,7 +156,7 @@
 				<figure class="effect-jazz">
 				<a href="#portfolioModal1"  data-toggle="modal">
 
-					<img src="public/frontEnd/images/g1.jpg" alt="img25" class="img-responsive"/>
+					<img src="<?php echo base_url();?>public/frontEnd/images/g1.jpg" alt="img25" class="img-responsive"/>
 						<figcaption>
 							<h4>Educational</h4>
 							<p> Education is not a problem. Education is an opportunity.</p>
@@ -169,7 +168,7 @@
 				<figure class="effect-jazz">
 				<a href="#portfolioModal2"  data-toggle="modal">
 
-					<img src="public/frontEnd/images/g2.jpg" alt="img25" class="img-responsive"/>
+					<img src="<?php echo base_url();?>public/frontEnd/images/g2.jpg" alt="img25" class="img-responsive"/>
 						<figcaption>
 							<h4>Educational</h4>
 							<p> Education is not a problem. Education is an opportunity.</p>
@@ -181,7 +180,7 @@
 				<figure class="effect-jazz">
 				<a href="#portfolioModal3"  data-toggle="modal">
 
-					<img src="public/frontEnd/images/g3.jpg" alt="img25" class="img-responsive"/>
+					<img src="<?php echo base_url();?>public/frontEnd/images/g3.jpg" alt="img25" class="img-responsive"/>
 						<figcaption>
 							<h4>Educational</h4>
 							<p> Education is not a problem. Education is an opportunity.</p>
@@ -197,7 +196,7 @@
 				<figure class="effect-jazz">
 				<a href="#portfolioModal4"  data-toggle="modal">
 
-					<img src="public/frontEnd/images/g4.jpg" alt="img25" class="img-responsive"/>
+					<img src="<?php echo base_url();?>public/frontEnd/images/g4.jpg" alt="img25" class="img-responsive"/>
 						<figcaption>
 							<h4 class="effcet-text"> Educational</h4>
 							<p> Learning is never done without errors and defeat.</p>
@@ -209,7 +208,7 @@
 				<figure class="effect-jazz">
 				<a href="#portfolioModal5"  data-toggle="modal">
 
-					<img src="public/frontEnd/images/g5.jpg" alt="img25" class="img-responsive"/>
+					<img src="<?php echo base_url();?>public/frontEnd/images/g5.jpg" alt="img25" class="img-responsive"/>
 						<figcaption>
 							<h4 class="effcet-text"> Educational</h4>
 							<p>Learning is never done without errors and defeat.</p>
@@ -221,7 +220,7 @@
 				<figure class="effect-jazz">
 				<a href="#portfolioModal6"  data-toggle="modal">
 
-					<img src="public/frontEnd/images/g6.jpg" alt="img25" class="img-responsive"/>
+					<img src="<?php echo base_url();?>public/frontEnd/images/g6.jpg" alt="img25" class="img-responsive"/>
 						<figcaption>
 							<h4 class="effcet-text">Educational</h4>
 							<p>Learning is never done without errors and defeat.</p>
@@ -233,7 +232,7 @@
 				<figure class="effect-jazz">
 				<a href="#portfolioModal7"  data-toggle="modal">
 
-					<img src="public/frontEnd/images/g7.jpg" alt="img25" class="img-responsive"/>
+					<img src="<?php echo base_url();?>public/frontEnd/images/g7.jpg" alt="img25" class="img-responsive"/>
 						<figcaption>
 							<h4 class="effcet-text"> Educational</h4>
 							<p> Learning is never done without errors and defeat.</p>
@@ -258,7 +257,7 @@
                     <div class="modal-body">
                         <h3>Educational</h3>
 
-                        <img src="public/frontEnd/images/g1.jpg" class="img-responsive" alt="">
+                        <img src="<?php echo base_url();?>public/frontEnd/images/g1.jpg" class="img-responsive" alt="">
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
                     </div>
                 </div>
@@ -279,7 +278,7 @@
                     <div class="modal-body">
                         <h3>Educational</h3>
 
-                        <img src="public/frontEnd/images/g2.jpg" class="img-responsive" alt="">
+                        <img src="<?php echo base_url();?>public/frontEnd/images/g2.jpg" class="img-responsive" alt="">
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
                     </div>
                 </div>
@@ -300,7 +299,7 @@
                     <div class="modal-body">
                         <h3>Educational</h3>
 
-                        <img src="public/frontEnd/images/g3.jpg" class="img-responsive" alt="">
+                        <img src="<?php echo base_url();?>public/frontEnd/images/g3.jpg" class="img-responsive" alt="">
 						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
                     </div>
                 </div>
@@ -321,7 +320,7 @@
                     <div class="modal-body">
                         <h3>Educational</h3>
 
-                        <img src="public/frontEnd/images/g4.jpg" class="img-responsive" alt="">
+                        <img src="<?php echo base_url();?>public/frontEnd/images/g4.jpg" class="img-responsive" alt="">
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
                     </div>
                 </div>
@@ -342,7 +341,7 @@
                     <div class="modal-body">
                         <h3>Educational</h3>
 
-                        <img src="public/frontEnd/images/g5.jpg" class="img-responsive" alt="">
+                        <img src="<?php echo base_url();?>public/frontEnd/images/g5.jpg" class="img-responsive" alt="">
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
                     </div>
                 </div>
@@ -363,7 +362,7 @@
                     <div class="modal-body">
                         <h3>Educational</h3>
 
-                        <img src="public/frontEnd/images/g6.jpg" class="img-responsive" alt="">
+                        <img src="<?php echo base_url();?>public/frontEnd/images/g6.jpg" class="img-responsive" alt="">
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
                     </div>
                 </div>
@@ -384,7 +383,7 @@
                     <div class="modal-body">
                         <h3>Educational</h3>
 
-                        <img src="public/frontEnd/images/g7.jpg" class="img-responsive" alt="">
+                        <img src="<?php echo base_url();?>public/frontEnd/images/g7.jpg" class="img-responsive" alt="">
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
                     </div>
                 </div>
@@ -403,7 +402,7 @@
 			<div class="col-md-3 team_gd1 wow zoomIn" data-wow-duration="1.5s" data-wow-delay="0.1s">
 				<div class="team_pos">
 					<div class="team_back"></div>
-					<img class="img-responsive" src="public/frontEnd/images/t1.jpg"  alt=" ">
+					<img class="img-responsive" src="<?php echo base_url();?>public/frontEnd/images/t1.jpg"  alt=" ">
 					<div class="team_info">
 						<a href="#"  class="face_one"><i class=" so1 fa fa-facebook fc1" aria-hidden="true"></i></a>
 						<a href="#"  class="face_one"><i class=" so2 fa fa-twitter fc2" aria-hidden="true"></i></a>
@@ -417,7 +416,7 @@
 			<div class="col-md-3 team_gd1 wow zoomIn" data-wow-duration="1.5s" data-wow-delay="0.1s">
 				<div class="team_pos">
 					<div class="team_back"></div>
-					<img class="img-responsive" src="public/frontEnd/images/t2.jpg"  alt=" ">
+					<img class="img-responsive" src="<?php echo base_url();?>public/frontEnd/images/t2.jpg"  alt=" ">
 					<div class="team_info">
 						<a href="#"  class="face_one"><i class=" so1 fa fa-facebook fc1" aria-hidden="true"></i></a>
 						<a href="#"  class="face_one"><i class=" so2 fa fa-twitter fc2" aria-hidden="true"></i></a>
@@ -430,7 +429,7 @@
 			<div class="col-md-3 team_gd1 wow zoomIn" data-wow-duration="1.5s" data-wow-delay="0.1s">
 				<div class="team_pos">
 					<div class="team_back"></div>
-					<img class="img-responsive" src="public/frontEnd/images/t3.jpg"  alt=" ">
+					<img class="img-responsive" src="<?php echo base_url();?>public/frontEnd/images/t3.jpg"  alt=" ">
 					<div class="team_info">
 						<a href="#"  class="face_one"><i class=" so1 fa fa-facebook fc1" aria-hidden="true"></i></a>
 						<a href="#"  class="face_one"><i class=" so2 fa fa-twitter fc2" aria-hidden="true"></i></a>
@@ -443,7 +442,7 @@
 			<div class="col-md-3 team_gd1 wow zoomIn" data-wow-duration="1.5s" data-wow-delay="0.1s">
 				<div class="team_pos">
 					<div class="team_back"></div>
-					<img class="img-responsive" src="public/frontEnd/images/t4.jpg"  alt=" ">
+					<img class="img-responsive" src="<?php echo base_url();?>public/frontEnd/images/t4.jpg"  alt=" ">
 					<div class="team_info">
 						<a href="#"  class="face_one"><i class=" so1 fa fa-facebook fc1" aria-hidden="true"></i></a>
 						<a href="#"  class="face_one"><i class=" so2 fa fa-twitter fc2" aria-hidden="true"></i></a>
@@ -465,7 +464,7 @@
 		<h3>Events</h3>
 		<div class="col-md-4 eve-agile e1">
 			<div class="eve-sub1">
-				<a href="#" data-toggle="modal" data-target="#myModal5"><img src="public/frontEnd/images/e2.jpg" alt="image"></a>
+				<a href="#" data-toggle="modal" data-target="#myModal5"><img src="<?php echo base_url();?>public/frontEnd/images/e2.jpg" alt="image"></a>
 			<h4><a href="#" data-toggle="modal" data-target="#myModal5">Educational</a></h4>
 				<h6>By an <a href="#">admin</a>, Oct-2016</h6>
 				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation</p>
@@ -483,7 +482,7 @@
 		</div>
 		<div class="col-md-4 eve-agile e2">
 			<div class="eve-sub1">
-				<a href="#" data-toggle="modal" data-target="#myModal6"><img src="public/frontEnd/images/e1.jpg" alt="image"></a>
+				<a href="#" data-toggle="modal" data-target="#myModal6"><img src="<?php echo base_url();?>public/frontEnd/images/e1.jpg" alt="image"></a>
 				<h4><a href="#" data-toggle="modal" data-target="#myModal6">Educational</a></h4>
 				<h6>By an <a href="#">admin</a>, Oct-2016</h6>
 				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation</p>
@@ -501,7 +500,7 @@
 		</div>
 		<div class="col-md-4 eve-agile e3">
 			<div class="eve-sub1">
-				<a href="#" data-toggle="modal" data-target="#myModal7"><img src="public/frontEnd/images/e3.jpg" alt="image"></a>
+				<a href="#" data-toggle="modal" data-target="#myModal7"><img src="<?php echo base_url();?>public/frontEnd/images/e3.jpg" alt="image"></a>
 				<h4><a href="#" data-toggle="modal" data-target="#myModal7">Educational</a></h4>
 				<h6>By an <a href="#">admin</a>, Oct-2016</h6>
 				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation</p>
@@ -527,7 +526,7 @@
 									<div class="modal-header">
 										<button type="button" class="close" data-dismiss="modal">&times;</button>
 											<h4>Educational</h4>
-											<img src="public/frontEnd/images/e2.jpg" alt="blog-image" />
+											<img src="<?php echo base_url();?>public/frontEnd/images/e2.jpg" alt="blog-image" />
 											<span>Lorem ipsum dolor sit amet, Sed ut perspiciatis unde omnis iste natus error sit voluptatem , eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.accusantium doloremque laudantium.</span>
 									</div>
 								</div>
@@ -542,7 +541,7 @@
 									<div class="modal-header">
 										<button type="button" class="close" data-dismiss="modal">&times;</button>
 											<h4>Educational</h4>
-											<img src="public/frontEnd/images/e1.jpg" alt="blog-image" />
+											<img src="<?php echo base_url();?>public/frontEnd/images/e1.jpg" alt="blog-image" />
 											<span>Lorem ipsum dolor sit amet, Sed ut perspiciatis unde omnis iste natus error sit voluptatem , eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.accusantium doloremque laudantium.</span>
 									</div>
 								</div>
@@ -558,7 +557,7 @@
 									<div class="modal-header">
 										<button type="button" class="close" data-dismiss="modal">&times;</button>
 											<h4>Educational</h4>
-											<img src="public/frontEnd/images/e3.jpg" alt="blog-image" />
+											<img src="<?php echo base_url();?>public/frontEnd/images/e3.jpg" alt="blog-image" />
 											<span>Lorem ipsum dolor sit amet, Sed ut perspiciatis unde omnis iste natus error sit voluptatem , eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.accusantium doloremque laudantium.</span>
 									</div>
 								</div>
@@ -580,27 +579,27 @@
 						       <div id="owl-demo" class="owl-carousel">
 					                 <div class="item-owl">
 					                	<div class="test-review">
-										<p><img src="public/frontEnd/images/left-quote.png" alt="">Lorem ipsum dolor sit ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.<img src="public/frontEnd/images/right-quote.png" alt=""></p>
+										<p><img src="<?php echo base_url();?>public/frontEnd/images/left-quote.png" alt="">Lorem ipsum dolor sit ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.<img src="<?php echo base_url();?>public/frontEnd/images/right-quote.png" alt=""></p>
 											<div class="img-agile">
-												<img src="public/frontEnd/images/t1.jpg" class="img-responsive" alt=""/>
+												<img src="<?php echo base_url();?>public/frontEnd/images/t1.jpg" class="img-responsive" alt=""/>
 											</div>
 											  <h5>James</h5>
 					                	    </div>
 					                </div>
 					                 <div class="item-owl">
 					                	<div class="test-review">
-										 <p> <img src="public/frontEnd/images/left-quote.png" alt="">Lorem ipsum dolor sit ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.<img src="public/frontEnd/images/right-quote.png" alt=""></p>
+										 <p> <img src="<?php echo base_url();?>public/frontEnd/images/left-quote.png" alt="">Lorem ipsum dolor sit ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.<img src="<?php echo base_url();?>public/frontEnd/images/right-quote.png" alt=""></p>
 						                	<div class="img-agile">
-											<img src="public/frontEnd/images/t2.jpg" class="img-responsive" alt=""/>
+											<img src="<?php echo base_url();?>public/frontEnd/images/t2.jpg" class="img-responsive" alt=""/>
 											</div>
 											<h5>Williams Allen</h5>
 					                	</div>
 					                </div>
 					                 <div class="item-owl">
 					                	<div class="test-review">
-										     <p><img src="public/frontEnd/images/left-quote.png" alt="">Lorem ipsum dolor sit ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.<img src="public/frontEnd/images/right-quote.png" alt=""></p>
+										     <p><img src="<?php echo base_url();?>public/frontEnd/images/left-quote.png" alt="">Lorem ipsum dolor sit ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.<img src="<?php echo base_url();?>public/frontEnd/images/right-quote.png" alt=""></p>
 						                	<div class="img-agile">
-											<img src="public/frontEnd/images/t3.jpg" class="img-responsive" alt=""/>
+											<img src="<?php echo base_url();?>public/frontEnd/images/t3.jpg" class="img-responsive" alt=""/>
 											</div>
 											<h5>Richard</h5>
 					                	</div>
@@ -619,42 +618,47 @@
 		<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5662244.714693903!2d-2.279153484594319!3d46.13545249359953!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd54a02933785731%3A0x6bfd3f96c747d9f7!2sFrance!5e0!3m2!1sen!2sin!4v1471606088687" style="border:0" allowfullscreen></iframe>
 	</div>
 	<div class="contact-agile" id="contact">
-		<h3>Contact <span>Us</span></h3>
-			<div class="container">
+            <h3>Contact <span>Us</span></h3>
+            <div class="container">                
 
-				<form action="#" method="post" class="wow fadeInLeft animated" data-wow-delay=".5s">
-					<div class="contact-grids1 agileinfo">
-						<div class="contact-me ">
-							<h4>Message</h4>
-							<textarea name="Message" placeholder="" required=""> </textarea>
-						</div>
-                                            
-                                                <div class="col-md-5 contact-form1">
-							<h4>Captcha</h4>
-							<?php echo $cap['image']; ?>
-						</div>
-						<div class="col-md-5 contact-form1">
-							<h4>Captcha</h4>
-							<input type="text" name="Captcha" placeholder="" required="">
-						</div>
-                                            
-                                            
-						<div class="col-md-5 contact-form1">
-							<h4>Name</h4>
-							<input type="text" name="Name" placeholder="" required="">
-						</div>
-						<div class="col-md-5 contact-form1">
-							<h4>Email</h4>
-							<input type="email" name="Email" placeholder="" required="">
-						</div>
-						<div class="col-md-2 contact-form">
-							<input type="submit" value="Submit">
-						</div>
-						<div class="clearfix"> </div>
+                <form action="<?php echo base_url();?>index.php/welcome/contactUs" method="post" class="wow fadeInLeft animated" data-wow-delay=".5s" id="contactUsForm">
+                    <div class="contact-grids1 agileinfo">
 
-					</div>
-				</form>
+                        <div class="col-md-5 contact-form1">
+                            <h4>Full Name</h4>
+                            <input type="text" name="name" placeholder="" class="validate[required]" size="50" value="<?php echo set_value('name'); ?>">
+                            <?php echo form_error('name'); ?>
+                        </div>
+                        <div class="col-md-5 contact-form1">
+                            <h4>Email</h4>
+                            <input type="text" name="email" placeholder="" class="validate[required]" size="50" value="<?php echo set_value('email'); ?>" >
+                            <?php echo form_error('email'); ?>
+                        </div>
 
-			</div>
+                        <div class="contact-me ">
+                            <h4>Query (500 Characters max)</h4>
+                            <textarea name="query" placeholder="" class="validate[required]" size="500"><?php echo set_value('query'); ?></textarea>
+                            <?php echo form_error('query'); ?>
+                        </div>
+
+                        <div class="col-md-5 contact-form1">
+                            <h4>Captcha</h4>
+                            <?php echo $dataParam["cap"]["image"]; ?>
+                        </div>
+                        <div class="col-md-5 contact-form1">
+                            <h4>Captcha</h4>
+                            <input type="text" name="captcha" class="validate[required]" size="8">
+                            <?php echo form_error('captcha'); ?>
+                        </div>
+
+                        <div class="col-md-2 contact-form">
+                            <input type="submit" name="contactUsFormSubmit" value="Submit">
+                        </div>
+                        <div class="clearfix"> </div>
+
+                    </div>
+                </form>
+
+            </div>
 	</div>
 <!--//contact-->
