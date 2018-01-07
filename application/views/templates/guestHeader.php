@@ -5,13 +5,13 @@ echo $this->session->flashdata('redirectGuestMessage');
 <div class="main-w3layouts" id="home">
 	<!--top-bar-->
 	<div class="top-search-bar">
-		<div class="header-top-nav">
-			<ul>
-				<li><a href="#" data-toggle="modal" data-target="#myModal1"><i class="fa fa-envelope" aria-hidden="true"></i>NEWSLETTER</a></li>
-				<li><a href="#" data-toggle="modal" data-target="#myModal3"><i class="fa fa-key" aria-hidden="true"></i>LOGIN</a></li>
-				<li><a href="#" data-toggle="modal" data-target="#myModal4"><i class="fa fa-lock" aria-hidden="true"></i>REGISTER</a></li>
-			</ul>
-		</div>
+            <div class="header-top-nav">
+                <ul>
+                    <li><a href="#" data-toggle="modal" data-target="#myModal1"><i class="fa fa-envelope" aria-hidden="true"></i>NEWSLETTER</a></li>
+                    <li><a href="#" data-toggle="modal" data-target="#myModal3"><i class="fa fa-key" aria-hidden="true"></i>LOGIN</a></li>
+<!--                <li><a href="#" data-toggle="modal" data-target="#myModal4"><i class="fa fa-lock" aria-hidden="true"></i>REGISTER</a></li>-->
+                </ul>
+            </div>
 	</div>
 	<!-- Modal1 -->
 		<div class="modal fade" id="myModal1" tabindex="-1" role="dialog" >
@@ -22,8 +22,8 @@ echo $this->session->flashdata('redirectGuestMessage');
 							<h4>Subscribe Now</h4>
 							<!--newsletter-->
 							<div class="newsletter">
-							  <form action="#" method="post">
-								<input type="email" name="email" size="30" required="" placeholder="Please fill your email" />
+                                                            <form action="#" method="post" name="subscribeForm" id="subscribeForm">
+								<input type="email" name="email" size="30" placeholder="Please fill your email" class="validate[required]" />
 								<input type="submit" value="Subscribe" />
 							  </form>
 							</div>
@@ -47,8 +47,8 @@ echo $this->session->flashdata('redirectGuestMessage');
 							<!--newsletter-->
 							<div class="login-main wthree">
                                                             <form action="<?php echo base_url();?>index.php/auth/logIn" method="post" name="loginForm" id="loginForm" >
-                                                                <input type="text" placeholder="Email Or Mobile" name="emailOrMobile">
-                                                                <input type="password" placeholder="Password" name="password">
+                                                                <input type="text" placeholder="Email Or Mobile" name="emailOrMobile" class="validate[required]">
+                                                                <input type="password" placeholder="Password" name="password" class="validate[required]">
 								<input type="submit" value="Login">
                                                             </form>
                                                             <a href="#" data-toggle="modal" data-target="#myModalFP">Forgot Password</a>
@@ -103,7 +103,7 @@ echo $this->session->flashdata('redirectGuestMessage');
                 <!--forgot password-->
                 <div class="login-main wthree">
                     <form action="<?php echo base_url();?>index.php/auth/forgotPassword" method="post" name="forgotPasswordForm" id="forgotPasswordForm">
-                        <input type="text" placeholder="Email Or Mobile" name="emailOrMobile1">                    
+                        <input type="text" placeholder="Email Or Mobile" name="emailOrMobile1" class="validate[required]">                    
                         <input type="submit" value="Submit">
                     </form>
                 </div>

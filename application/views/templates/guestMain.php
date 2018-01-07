@@ -103,8 +103,6 @@ jQuery(document).ready(function($) {
 <!--// bottom-top -->
 <script type="text/javascript" src="<?php echo base_url();?>public/frontEnd/js/bootstrap-3.1.1.min.js"></script>
 
-<script type="text/javascript" src="<?php echo base_url();?>public/js/jquery_disable_autocomplete_master/jquery.disable.autocomplete.min.js"></script>
-   
 <link rel="stylesheet" href="<?php echo base_url();?>public/js/jQuery-Validation-Engine-master/css/validationEngine.jquery.css" type="text/css"/>
 <link rel="stylesheet" href="<?php echo base_url();?>public/js/jQuery-Validation-Engine-master/css/template.css" type="text/css"/>
 
@@ -123,14 +121,10 @@ $(document).ready(function(){
     };
     */
     $().UItoTop({ easingType: 'easeOutQuart' });
-    
-    $('[name="emailOrMobile"]').disableAutocomplete();
-    $('[name="password"]').disableAutocomplete();
-    
-    $("#loginForm").validationEngine({promptPosition: 'inline'});
-    
-    
-    //$("#forgotPasswordForm").validationEngine({promptPosition: 'inline'});    
+        
+    $("#subscribeForm").validationEngine({promptPosition: 'inline'});
+    $("#loginForm").validationEngine({promptPosition: 'inline'});    
+    $("#forgotPasswordForm").validationEngine({promptPosition: 'inline'});    
 });
 </script>
 
