@@ -20,8 +20,9 @@ class Welcome extends MY_Controller
         );
         
         $cap = create_captcha($capacheConfig);
-        $capData = array('cap'=>$cap);                      
-             
+        $capData = array('cap'=>$cap);                              
+        echo $this->session->captchaCode = $cap['word'];
+        
         $this->page = "welcome";
         $this->guestLayout($capData);
     }
@@ -59,12 +60,12 @@ class Welcome extends MY_Controller
                 array(
                         'field' => 'captcha', 
                         'label' => 'Captcha', 
-                        'rules' => 'required|trim|max_length[8]'
+                        'rules' => 'required|trim|max_length[8]|callback__check_captcha'
                     )
             );
 
             $this->form_validation->set_rules($rules);
-
+            
             if ($this->form_validation->run() == false)
             {        
                 $this->load->library('form_validation');
@@ -81,83 +82,26 @@ class Welcome extends MY_Controller
 
                 $cap = create_captcha($capacheConfig);
                 $capData = array('cap'=>$cap);                       
+                echo $this->session->captchaCode = $cap['word'];
 
                 $this->page = "welcome";
                 $this->guestLayout($capData);
-            }      
+            } 
+            else
+            {
+                echo "done";
+            }
         }
     }
-            
 
 
-
-
-//    public function contactUS()
-//    {
-//        $name = $this->input->post('name');
-//        $email = $this->input->post('email');
-//        $queryDirty = $this->input->post('query');
-//        $this->load->helper('htmlpurifier');
-//        $queryCleaned = html_purify($queryDirty);
-//        $captcha = $this->input->post('captcha');
-//
-//        $success = false;
-//        
-//        $this->load->library('form_validation');
-//        
-//        $config = array(
-//            array(
-//                    'field' => 'name', 
-//                    'label' => 'Name', 
-//                    'rules' => 'required|trim|xss_clean|max_length[50]'
-//                ),
-//            array(
-//                    'field' => 'email', 
-//                    'label' => 'Email', 
-//                    'rules' => 'required|trim|xss_clean|max_length[50]'
-//                ),
-//            array(
-//                    'field' => 'query', 
-//                    'label' => 'Query', 
-//                    'rules' => 'required|trim|xss_clean|max_length[500]'
-//                ),   
-//            array(
-//                    'field' => 'captcha', 
-//                    'label' => 'Captcha', 
-//                    'rules' => 'required|trim|xss_clean|max_length[8]|callbackValidateCaptcha'
-//                )
-//        );
-//        
-//        $this->form_validation->set_rules($config);
-//        
-//        if ($this->form_validation->run() == true)
-//        {        
-//            $success = true;
-////            if( $this->session->captcha == $captcha )
-////            {
-////                $success = true;
-////            }
-////            else
-////            {
-////                $success = false;
-////                //$validationErrors = "Captcha not matched";
-////            }
-//        }
-//        else
-//        {
-//            $validationErrors =  validation_errors();
-//        }        
-//        
-//        if($success == false)
-//        {
-//            $postedData = array('messageType'=>'contactUsError','message'=>$validationErrors,'name'=>$name,'email'=>$email,'query'=>$queryDirty,'capData'=>$capData);            
-//        }
-//        else
-//        {
-//            $postedData = array('messageType'=>'contactUsSuccess','message'=>'Query submitted successfully.');
-//        }
-//        
-//        $this->session->set_flashdata('postedData', $postedData);    
-//        redirect(base_url(), 'location');
-//    }
+    function _check_captcha($code) 
+    {
+        if($code != $this->session->captchaCode) 
+        {
+            $this->form_validation->set_message('_check_captcha', 'Captcha is incorrect');
+            return FALSE;
+        }
+        return TRUE;
+    }
 }
