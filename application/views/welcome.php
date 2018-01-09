@@ -621,24 +621,61 @@
             <h3>Contact <span>Us</span></h3>
             <div class="container">                
 
-                <form action="<?php echo base_url();?>index.php/welcome/contactUs" method="post" class="wow fadeInLeft animated" data-wow-delay=".5s" id="contactUsForm">
+                    <?php
+                    $attributes = array('class'=>'wow fadeInLeft animated', 'id'=>'contactUsForm', 'method'=>'post', 'data-wow-delay'=>'.5s' );
+                    echo form_open('welcome/contactUs', $attributes);
+                    ?>
+                
                     <div class="contact-grids1 agileinfo">
 
                         <div class="col-md-5 contact-form1">
                             <h4>Full Name</h4>
-                            <input type="text" name="name" placeholder="" class="validate[required]" size="50" value="<?php echo set_value('name'); ?>">
-                            <?php echo form_error('name'); ?>
+                            <?php
+                            $data = array(
+                                'type'  => 'text',
+                                'name'  => 'name',
+                                'id'    => 'name',
+                                'value' => set_value('name'),
+                                'class' => 'validate[required]',
+                                'placeholder' => '',
+                                'size' => '50'
+                            );
+                            echo form_input($data);
+                            echo form_error('name'); 
+                            ?>
                         </div>
                         <div class="col-md-5 contact-form1">
                             <h4>Email</h4>
-                            <input type="text" name="email" placeholder="" class="validate[required]" size="50" value="<?php echo set_value('email'); ?>" >
-                            <?php echo form_error('email'); ?>
+                            <?php
+                            $data = array(
+                                'type'  => 'text',
+                                'name'  => 'email',
+                                'id'    => 'email',
+                                'value' => set_value('email'),
+                                'class' => 'validate[required,custom[email]]',
+                                'placeholder' => '',
+                                'size' => '50'
+                            );
+                            echo form_input($data);
+                            echo form_error('email'); 
+                            ?>
                         </div>
 
                         <div class="contact-me ">
                             <h4>Query (500 Characters max)</h4>
-                            <textarea name="query" placeholder="" class="validate[required]" size="500"><?php echo set_value('query'); ?></textarea>
-                            <?php echo form_error('query'); ?>
+                            <?php
+                            $data = array(
+                                'type'  => 'textarea',
+                                'name'  => 'query',
+                                'id'    => 'query',
+                                'value' => set_value('query'),
+                                'class' => 'validate[required]',
+                                'placeholder' => '',
+                                'size' => '500'
+                            );
+                            echo form_textarea($data);
+                            echo form_error('query'); 
+                            ?>
                         </div>
 
                         <div class="col-md-5 contact-form1">
@@ -647,8 +684,20 @@
                         </div>
                         <div class="col-md-5 contact-form1">
                             <h4>Captcha</h4>
-                            <input type="text" name="captcha" class="validate[required]" size="8">
-                            <?php echo form_error('captcha'); ?>
+                            
+                            <?php
+                            $data = array(
+                                'type'  => 'text',
+                                'name'  => 'captcha',
+                                'id'    => 'captcha',
+                                'value' => set_value('captcha'),
+                                'class' => 'validate[required]',
+                                'placeholder' => '',
+                                'size' => '8'
+                            );
+                            echo form_input($data);
+                            echo form_error('captcha'); 
+                            ?>
                         </div>
 
                         <div class="col-md-2 contact-form">

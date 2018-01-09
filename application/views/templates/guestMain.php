@@ -24,6 +24,13 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 <body>
 
     <?php
+    if($this->session->flashdata('contactUsSuccess'))
+    {
+        echo $this->session->flashdata('contactUsSuccess');
+    }
+    ?>
+    
+    <?php
     if($guestHeader){echo $guestHeader;}
     
     if($page){echo $page;}
@@ -123,7 +130,7 @@ $(document).ready(function(){
     //$("#subscribeForm").validationEngine({promptPosition: 'inline'});
     //$("#loginForm").validationEngine({promptPosition: 'inline'});    
     //$("#forgotPasswordForm").validationEngine({promptPosition: 'inline'});    
-    //$("#contactUsForm").validationEngine({promptPosition: 'inline'});    
+    $("#contactUsForm").validationEngine({promptPosition: 'inline'});    
 });
 </script>
 

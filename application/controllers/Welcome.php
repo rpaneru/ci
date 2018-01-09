@@ -21,7 +21,7 @@ class Welcome extends MY_Controller
         
         $cap = create_captcha($capacheConfig);
         $capData = array('cap'=>$cap);                              
-        echo $this->session->captchaCode = $cap['word'];
+        $this->session->captchaCode = $cap['word'];
         
         $this->page = "welcome";
         $this->guestLayout($capData);
@@ -32,12 +32,10 @@ class Welcome extends MY_Controller
     {
         if (isset($_POST['contactUsFormSubmit'])) 
         {
-            $name = $this->input->post('name');
-            $email = $this->input->post('email');
-            $queryDirty = $this->input->post('query');
-            $this->load->helper('htmlpurifier');
-            $queryCleaned = html_purify($queryDirty);
-            $captcha = $this->input->post('captcha');
+            $name = $this->security->xss_clean($this->input->post('name'));
+            $email = $this->security->xss_clean($this->input->post('email'));
+            $query = $this->security->xss_clean($this->input->post('query'));            
+            $captcha = $this->security->xss_clean($this->input->post('captcha'));
             
             $this->load->library('form_validation');
 
@@ -68,6 +66,7 @@ class Welcome extends MY_Controller
             
             if ($this->form_validation->run() == false)
             {        
+                //echo 'yes';die;
                 $this->load->library('form_validation');
                 
                 $this->load->helper('captcha');
@@ -82,14 +81,16 @@ class Welcome extends MY_Controller
 
                 $cap = create_captcha($capacheConfig);
                 $capData = array('cap'=>$cap);                       
-                echo $this->session->captchaCode = $cap['word'];
+                $this->session->captchaCode = $cap['word'];
 
                 $this->page = "welcome";
                 $this->guestLayout($capData);
             } 
             else
             {
-                echo "done";
+                //echo "no";die;
+                $this->session->set_flashdata('contactUsSuccess','Your query has been submited. Admin will contact you soon');
+                redirect(base_url(), 'location');
             }
         }
     }
