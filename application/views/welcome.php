@@ -636,7 +636,7 @@
                                 'name'  => 'name',
                                 'id'    => 'name',
                                 'value' => set_value('name'),
-                                'class' => 'validate[required]',
+                                'class' => 'validate[required,maxSize[50]]',
                                 'placeholder' => '',
                                 'size' => '50'
                             );
@@ -652,7 +652,7 @@
                                 'name'  => 'email',
                                 'id'    => 'email',
                                 'value' => set_value('email'),
-                                'class' => 'validate[required,custom[email]]',
+                                'class' => 'validate[required,custom[email],maxSize[50]]',
                                 'placeholder' => '',
                                 'size' => '50'
                             );
@@ -669,7 +669,7 @@
                                 'name'  => 'query',
                                 'id'    => 'query',
                                 'value' => set_value('query'),
-                                'class' => 'validate[required]',
+                                'class' => 'validate[required,maxSize[500]]',
                                 'placeholder' => '',
                                 'size' => '500'
                             );
@@ -691,7 +691,7 @@
                                 'name'  => 'captcha',
                                 'id'    => 'captcha',
                                 'value' => set_value('captcha'),
-                                'class' => 'validate[required]',
+                                'class' => 'validate[required,maxSize[8]]',
                                 'placeholder' => '',
                                 'size' => '8'
                             );

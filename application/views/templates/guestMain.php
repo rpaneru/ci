@@ -128,7 +128,7 @@ $(document).ready(function(){
     $().UItoTop({ easingType: 'easeOutQuart' });
         
     //$("#subscribeForm").validationEngine({promptPosition: 'inline'});
-    //$("#loginForm").validationEngine({promptPosition: 'inline'});    
+    $("#loginForm").validationEngine({promptPosition: 'inline'});    
     //$("#forgotPasswordForm").validationEngine({promptPosition: 'inline'});    
     $("#contactUsForm").validationEngine({promptPosition: 'inline'});    
 });

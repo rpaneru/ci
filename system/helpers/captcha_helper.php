@@ -74,7 +74,7 @@ if ( ! function_exists('create_captcha'))
 			'expiration'	=> 7200,
 			'word_length'	=> 8,
 			'img_id'	=> '',
-			'pool'		=> '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ',
+			'pool'		=> '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ',
 			'colors'	=> array(
 				'background'	=> array(255,255,255),
 				'border'	=> array(153,102,102),
