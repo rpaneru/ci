@@ -118,5 +118,15 @@ class MY_Controller extends CI_Controller
         
         $this->load->view('templates/adminMain',$this->adminTemplate);
     }
+    
+    function _check_captcha($code) 
+    {
+        if($code != $this->session->captchaCode) 
+        {
+            $this->form_validation->set_message('_check_captcha', 'Captcha is incorrect');
+            return FALSE;
+        }
+        return TRUE;
+    }
         
 }

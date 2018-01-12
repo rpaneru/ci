@@ -100,15 +100,4 @@ class Welcome extends MY_Controller
             }
         }
     }
-
-
-    function _check_captcha($code) 
-    {
-        if($code != $this->session->captchaCode) 
-        {
-            $this->form_validation->set_message('_check_captcha', 'Captcha is incorrect');
-            return FALSE;
-        }
-        return TRUE;
-    }
 }

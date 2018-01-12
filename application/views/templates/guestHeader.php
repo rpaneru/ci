@@ -63,24 +63,13 @@
                                                                 'name'  => 'password',
                                                                 'id'    => 'password',
                                                                 'value' => set_value('emailOrMobile'),
-                                                                'class' => 'validate[required,funcCall[passwordFormat]]',
+                                                                'class' => 'validate[required,minSize[8],maxSize[15]]',
                                                                 'placeholder' => 'Password',
                                                                 'size' => '50'
                                                             );
                                                             echo form_input($data);
                                                             echo form_error('password');                                                            
-                                                            ?>
-                                                            <div>
-                                                                <ul>
-                                                                    <li>Upper case required;</li>
-                                                                    <li>Lower case required;</li>
-                                                                    <li>1 number requied.</li>
-                                                                    <li>1 Special character Required</li>
-                                                                </ul>
-                                                                
-                                                            </div>
-                                                                
-                                                            <?php                                                            
+                                                            
                                                             echo $dataParam["cap"]["image"];
                                                             
                                                             $data = array(
@@ -88,7 +77,7 @@
                                                                 'name'  => 'captcha1',
                                                                 'id'    => 'captcha1',
                                                                 'value' => set_value('captcha'),
-                                                                'class' => 'validate[required,maxSize[8]]',
+                                                                'class' => 'validate[required,minSize[8],maxSize[8]]',
                                                                 'placeholder' => '',
                                                                 'size' => '8'
                                                             );

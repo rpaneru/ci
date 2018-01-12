@@ -5,37 +5,79 @@ class Auth extends MY_Controller
 {
     public function logIn()
     {        
-        $emailOrMobile = $this->input->post('emailOrMobile');
-        $password = $this->input->post('password');        
+        $this->load->helper('security');
+            
+        $emailOrMobile = $this->security->xss_clean($this->input->post('emailOrMobile'));
+        $password = $this->security->xss_clean($this->input->post('password'));
+        $captcha1 = $this->input->post('captcha1');
+            
+        $this->load->library('form_validation');
+
+        $rules = array(
+            array(
+                    'field' => 'emailOrMobile', 
+                    'label' => 'Email Or Mobile', 
+                    'rules' => 'required|trim|max_length[50]'
+                ),
+            array(
+                    'field' => 'password', 
+                    'label' => 'Password', 
+                    'rules' => 'required|trim|min_length[8]|max_length[15]'
+                ),
+            array(
+                    'field' => 'captcha1', 
+                    'label' => 'Captcha', 
+                    'rules' => 'required|trim|max_length[8]|callback__check_captcha'
+                )                
+        );
+
+        $this->form_validation->set_rules($rules);
         
-        $this->load->model("AuthModel");
-        $this->load->model("UserModel");
-        
-        
-        if ($this->AuthModel->logIn($emailOrMobile, $password) == 1) 
+        if ($this->form_validation->run() == FALSE)
+        {              
+            $continue = FALSE;
+        } 
+        else
+        {                                                    
+            $continue = TRUE;
+        }
+
+        if($continue)
         {
-            if(is_numeric($emailOrMobile))
+            $this->load->model("AuthModel");
+            $this->load->model("UserModel");
+        
+            if ($this->AuthModel->logIn($emailOrMobile, $password) == 1) 
             {
-                $column = 'mobile';
-            }
+                if(is_numeric($emailOrMobile))
+                {
+                    $column = 'mobile';
+                }
+                else 
+                {
+                    $column = 'email';
+                }
+                $params = array($column=>$emailOrMobile);            
+
+                $loggedInUserData = $this->UserModel->getUserData($params);
+
+                $params = array('userId'=>$loggedInUserData->userId,'status'=>'0');
+
+                $this->session->profileTypeId = $this->AuthModel->getUserProfileTypes($params);
+
+                redirect(base_url().'index.php/admin/dashboard', 'location');
+            } 
             else 
             {
-                $column = 'email';
+                redirect(base_url(), 'location');
             }
-            $params = array($column=>$emailOrMobile);            
-            
-            $loggedInUserData = $this->UserModel->getUserData($params);
-            
-            $params = array('userId'=>$loggedInUserData->userId,'status'=>'0');
-            
-            $this->session->profileTypeId = $this->AuthModel->getUserProfileTypes($params);
-
-            redirect(base_url().'index.php/admin/dashboard', 'location');
-        } 
+        }
         else 
         {
             redirect(base_url(), 'location');
         }
+        
+        
     }
     
     public function logOut()
@@ -138,5 +180,5 @@ class Auth extends MY_Controller
         }
 
         redirect(base_url(), 'location');
-    }
+    }        
 }
