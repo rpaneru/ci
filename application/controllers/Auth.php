@@ -32,7 +32,7 @@ class Auth extends MY_Controller
         );
 
         $this->form_validation->set_rules($rules);
-        
+
         if ($this->form_validation->run() == FALSE)
         {              
             $continue = FALSE;
@@ -46,7 +46,7 @@ class Auth extends MY_Controller
         {
             $this->load->model("AuthModel");
             $this->load->model("UserModel");
-        
+
             if ($this->AuthModel->logIn($emailOrMobile, $password) == 1) 
             {
                 if(is_numeric($emailOrMobile))

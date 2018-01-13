@@ -3,32 +3,34 @@
 	<div class="top-search-bar">
             <div class="header-top-nav">
                 <ul>
-                    <li><a href="#" data-toggle="modal" data-target="#myModal1"><i class="fa fa-envelope" aria-hidden="true"></i>NEWSLETTER</a></li>
-                    <li><a href="#" data-toggle="modal" data-target="#myModal3"><i class="fa fa-key" aria-hidden="true"></i>LOGIN</a></li>
+<!--                    <li><a href="#" data-toggle="modal" data-target="#myModal1"><i class="fa fa-envelope" aria-hidden="true"></i>NEWSLETTER</a></li>-->
+                    <?php
+                    checkLoggedIn();
+                    ?>                    
 <!--                <li><a href="#" data-toggle="modal" data-target="#myModal4"><i class="fa fa-lock" aria-hidden="true"></i>REGISTER</a></li>-->
                 </ul>
             </div>
 	</div>
 	<!-- Modal1 -->
-		<div class="modal fade" id="myModal1" tabindex="-1" role="dialog" >
-					<div class="modal-dialog" role="document">
-						<div class="modal-content modal-info">
-							<div class="modal-header">
-								<button type="button" class="close w3l" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-							<h4>Subscribe Now</h4>
-							<!--newsletter-->
-							<div class="newsletter">
-                                                            <form action="#" method="post" name="subscribeForm" id="subscribeForm">
-								<input type="email" name="email" size="30" placeholder="Please fill your email" class="validate[required]" />
-								<input type="submit" value="Subscribe" />
-							  </form>
-							</div>
-						<!--//newsletter-->
-						</div>
-					</div>
-				</div>
-		</div>
-			<div class="clearfix"></div>
+        <div class="modal fade" id="myModal1" tabindex="-1" role="dialog" >
+            <div class="modal-dialog" role="document">
+                <div class="modal-content modal-info">
+                    <div class="modal-header">
+                        <button type="button" class="close w3l" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4>Subscribe Now</h4>
+                        <!--newsletter-->
+                        <div class="newsletter">
+                            <form action="#" method="post" name="subscribeForm" id="subscribeForm">
+                                <input type="email" name="email" size="30" placeholder="Please fill your email" class="validate[required]" />
+                                <input type="submit" value="Subscribe" />
+                            </form>
+                        </div>
+                    <!--//newsletter-->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="clearfix"></div>
 
 	<!-- //Modal1 -->
 
@@ -97,14 +99,14 @@
 	<!-- //Modal3 -->
 
 	<!-- Modal4 -->
-		<div class="modal fade" id="myModal4" tabindex="-1" role="dialog" >
+<!--		<div class="modal fade" id="myModal4" tabindex="-1" role="dialog" >
 			<div class="modal-dialog" role="document">
-			<!-- Modal content-->
+			 Modal content
 				<div class="modal-content news-w3l">
 						<div class="modal-header">
 							<button type="button" class="close w3l" data-dismiss="modal">&times;</button>
 							<h4>Register Now</h4>
-							<!--newsletter-->
+							newsletter
 							<div class="login-main wthree">
 							<form action="#" method="post">
 								<input type="text" placeholder="Name" name="Name">
@@ -115,11 +117,11 @@
 								<input type="submit" value="Register Now">
 							</form>
 							</div>
-						<!--//newsletter-->
+						//newsletter
 						</div>
 					</div>
 				</div>
-			 </div>
+			 </div>-->
 			<div class="clearfix"></div>
 	<!-- //Modal4-->
         

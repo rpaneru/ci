@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Jan 06, 2018 at 10:44 AM
+-- Generation Time: Jan 13, 2018 at 04:27 PM
 -- Server version: 5.7.20-0ubuntu0.16.04.1
 -- PHP Version: 5.6.32-1+ubuntu16.04.1+deb.sury.org+2
 
@@ -30,16 +30,26 @@ CREATE TABLE `emailLog` (
   `id` int(11) NOT NULL,
   `smtpRelayerId` int(11) NOT NULL,
   `emailOrigin` enum('Website','Cron') NOT NULL DEFAULT 'Website',
-  `messageId` varchar(255) NOT NULL,
-  `controllerFunction` varchar(255) NOT NULL,
+  `messageId` varchar(50) NOT NULL,
+  `controllerFunction` varchar(100) NOT NULL,
   `userIdFrom` int(11) NOT NULL,
-  `emailFrom` varchar(255) NOT NULL,
+  `emailFrom` varchar(50) NOT NULL,
   `userIdTo` int(11) NOT NULL,
-  `emailTo` varchar(255) NOT NULL,
+  `emailTo` varchar(50) NOT NULL,
   `subject` varchar(255) NOT NULL,
   `body` text NOT NULL,
-  `dateTime` datetime NOT NULL
+  `dateTime` datetime NOT NULL,
+  `status` varchar(10) NOT NULL,
+  `rejectReason` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `emailLog`
+--
+
+INSERT INTO `emailLog` (`id`, `smtpRelayerId`, `emailOrigin`, `messageId`, `controllerFunction`, `userIdFrom`, `emailFrom`, `userIdTo`, `emailTo`, `subject`, `body`, `dateTime`, `status`, `rejectReason`) VALUES
+(1, 1, 'Website', '6cb6953f9dd14f4390bdb9d57b30ede8', 'Auth/forgotPassword', 0, 'rajeshpaneru@myworkforce.org', 1, 'rpaneru1986@gmail.com', 'Reset Password', 'Click here you reset your password', '2018-01-06 14:27:05', 'queued', ''),
+(2, 1, 'Website', '55308bdb8a914867aa06f1d9d03f237b', 'Auth/forgotPassword', 0, 'rajeshpaneru@myworkforce.org', 1, 'rpaneru1986@gmail.com', 'Reset Password', 'Click here you reset your password', '2018-01-06 22:16:27', 'queued', '');
 
 -- --------------------------------------------------------
 
@@ -78,7 +88,8 @@ CREATE TABLE `profileTypeServices` (
 --
 
 INSERT INTO `profileTypeServices` (`profileTypeServiceId`, `profileTypeId`, `serviceId`) VALUES
-(1, 3, 2);
+(1, 3, 2),
+(2, 3, 3);
 
 -- --------------------------------------------------------
 
@@ -88,8 +99,8 @@ INSERT INTO `profileTypeServices` (`profileTypeServiceId`, `profileTypeId`, `ser
 
 CREATE TABLE `services` (
   `serviceId` int(11) NOT NULL,
-  `controller` varchar(255) NOT NULL,
-  `function` varchar(255) NOT NULL
+  `controller` varchar(50) NOT NULL,
+  `function` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -98,7 +109,8 @@ CREATE TABLE `services` (
 
 INSERT INTO `services` (`serviceId`, `controller`, `function`) VALUES
 (1, 'Welcome', 'index'),
-(2, 'Admin', 'dashboard');
+(2, 'Admin', 'dashboard'),
+(3, 'Profile', 'listProfiles');
 
 -- --------------------------------------------------------
 
@@ -108,12 +120,12 @@ INSERT INTO `services` (`serviceId`, `controller`, `function`) VALUES
 
 CREATE TABLE `smtpRelayer` (
   `id` int(11) NOT NULL,
-  `host` varchar(255) NOT NULL,
-  `port` int(11) NOT NULL,
-  `userName` varchar(255) NOT NULL,
-  `password` varchar(255) NOT NULL,
-  `fromName` varchar(255) NOT NULL,
-  `fromEmail` varchar(255) NOT NULL,
+  `host` varchar(50) NOT NULL,
+  `port` int(3) NOT NULL,
+  `userName` varchar(50) NOT NULL,
+  `password` varchar(50) NOT NULL,
+  `fromName` varchar(50) NOT NULL,
+  `fromEmail` varchar(50) NOT NULL,
   `status` enum('0','1') NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -152,13 +164,13 @@ INSERT INTO `userProfileTypes` (`userProfileTypeId`, `userId`, `profileTypeId`, 
 
 CREATE TABLE `users` (
   `userId` int(11) NOT NULL,
-  `name` varchar(255) NOT NULL,
-  `email` varchar(255) NOT NULL,
+  `name` varchar(50) NOT NULL,
+  `email` varchar(50) NOT NULL,
   `mobile` bigint(10) NOT NULL,
   `password` varchar(32) NOT NULL,
   `status` enum('0','1') NOT NULL DEFAULT '0',
-  `profilePic` varchar(255) NOT NULL,
-  `sessionId` varchar(50) DEFAULT NULL,
+  `profilePic` varchar(50) NOT NULL,
+  `sessionId` varchar(30) DEFAULT NULL,
   `createdByUserId` int(11) DEFAULT NULL,
   `createdDateTime` datetime DEFAULT NULL,
   `updatedByUserId` int(11) DEFAULT NULL,
@@ -170,7 +182,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`userId`, `name`, `email`, `mobile`, `password`, `status`, `profilePic`, `sessionId`, `createdByUserId`, `createdDateTime`, `updatedByUserId`, `updatedDateTime`) VALUES
-(1, 'Rajesh Paneru', 'rpaneru1986@gmail.com', 8130654757, 'e10adc3949ba59abbe56e057f20f883e', '0', 'rajeshpaneru.jpg', NULL, NULL, '2018-01-01 00:00:00', NULL, NULL);
+(1, 'Rajesh Paneru', 'rpaneru1986@gmail.com', 8130654757, '014d6931fd1ed69b3054ce1e725e2b82', '0', 'rajeshpaneru.jpg', NULL, NULL, '2018-01-01 00:00:00', NULL, NULL);
 
 --
 -- Indexes for dumped tables
@@ -228,7 +240,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `emailLog`
 --
 ALTER TABLE `emailLog`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT for table `profileTypes`
 --
@@ -238,12 +250,12 @@ ALTER TABLE `profileTypes`
 -- AUTO_INCREMENT for table `profileTypeServices`
 --
 ALTER TABLE `profileTypeServices`
-  MODIFY `profileTypeServiceId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `profileTypeServiceId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT for table `services`
 --
 ALTER TABLE `services`
-  MODIFY `serviceId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `serviceId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 --
 -- AUTO_INCREMENT for table `smtpRelayer`
 --

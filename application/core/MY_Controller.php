@@ -3,6 +3,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class MY_Controller extends CI_Controller 
 {
+    protected $loggedInUserData = '';
+
     public function __construct() 
     {
         parent::__construct();
@@ -87,6 +89,11 @@ class MY_Controller extends CI_Controller
             }
             
         }
+        
+        $this->load->model("UserModel");
+        
+        $params = array('userId'=>$this->session->userId);            
+        $this->loggedInUserData = (array)$this->UserModel->getUserData($params);
     }     
         
     public function guestLayout($dataParam)
@@ -103,8 +110,10 @@ class MY_Controller extends CI_Controller
     }
     
     public function adminLayout($dataParam)
-    {   
+    {      
         $data['dataParam'] = $dataParam;
+                
+        $data['loggedInUserData'] = $this->loggedInUserData;
         
         $this->adminTemplate['adminHeader'] = $this->load->view('templates/adminHeader',$data);
         
@@ -127,6 +136,19 @@ class MY_Controller extends CI_Controller
             return FALSE;
         }
         return TRUE;
+    }
+    
+    function isLoggedIn()
+    {
+        if( count($this->session->userdata['profileTypeId']) == 1 
+            && in_array('1', $this->session->userdata['profileTypeId']) )            
+        {
+            return False;
+        }
+        else
+        {
+            return TRUE;
+        }
     }
         
 }

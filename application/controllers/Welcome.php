@@ -19,7 +19,9 @@ class Welcome extends MY_Controller
         
         $cap = create_captcha($capacheConfig);
         $capData = array('cap'=>$cap);                              
-        echo $this->session->captchaCode = $cap['word'];
+        $this->session->captchaCode = $cap['word'];
+        
+        $this->load->helper('login_helper');
         
         $this->page = "welcome";
         $this->guestLayout($capData);

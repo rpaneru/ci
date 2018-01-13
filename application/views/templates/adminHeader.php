@@ -215,18 +215,19 @@
           </li>-->
           <!-- User Account: style can be found in dropdown.less -->
           <li class="dropdown user user-menu">             
+
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-              <img src="<?php echo base_url();?>public/userProfilePic/<?php echo $dataParam['profilePic']; ?>" class="user-image" alt="User Image">
+              <img src="<?php echo base_url();?>public/userProfilePic/<?php echo $loggedInUserData['profilePic']; ?>" class="user-image" alt="User Image">
               <span class="hidden-xs"><?php echo $dataParam['name']; ?></span>
             </a>
             <ul class="dropdown-menu">
               <!-- User image -->
               <li class="user-header">
-                <img src="<?php echo base_url();?>public/userProfilePic/<?php echo $dataParam['profilePic']; ?>" class="img-circle" alt="User Image">
+                <img src="<?php echo base_url();?>public/userProfilePic/<?php echo $loggedInUserData['profilePic']; ?>" class="img-circle" alt="User Image">
 
                 <p>
                   <?php echo $dataParam['name']; ?>
-                    <small>Member since <?php echo date("d-M-Y", strtotime($dataParam['createdDateTime']) ); ?></small>
+                    <small>Member since <?php echo date("d-M-Y", strtotime($loggedInUserData['createdDateTime']) ); ?></small>
                 </p>
               </li>
               <!-- Menu Body -->
