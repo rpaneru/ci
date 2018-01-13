@@ -4,6 +4,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class MY_Controller extends CI_Controller 
 {
     protected $loggedInUserData = '';
+    protected $menuList = '';    
 
     public function __construct() 
     {
@@ -94,6 +95,11 @@ class MY_Controller extends CI_Controller
         
         $params = array('userId'=>$this->session->userId);            
         $this->loggedInUserData = (array)$this->UserModel->getUserData($params);
+        
+        
+        $this->load->helper('services_helper');
+        
+        $this->menuList = getListServices();
     }     
         
     public function guestLayout($dataParam)
@@ -114,6 +120,8 @@ class MY_Controller extends CI_Controller
         $data['dataParam'] = $dataParam;
                 
         $data['loggedInUserData'] = $this->loggedInUserData;
+        
+        $data['menuList'] = $this->menuList;
         
         $this->adminTemplate['adminHeader'] = $this->load->view('templates/adminHeader',$data);
         

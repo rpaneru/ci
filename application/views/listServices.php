@@ -37,7 +37,7 @@
                             </thead>
                             <tbody>
                             <?php
-                            foreach ($dataParam as $controller => $methods)
+                            foreach ($menuList as $controller => $methods)
                             {
                                 foreach ($methods as $method)
                                 {

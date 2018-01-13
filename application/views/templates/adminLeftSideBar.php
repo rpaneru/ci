@@ -19,7 +19,7 @@
       <!-- sidebar menu: : style can be found in sidebar.less -->
       <ul class="sidebar-menu" data-widget="tree">        
         <?php
-        foreach ($dataParam as $controller => $methods)
+        foreach ($menuList as $controller => $methods)
         {
         ?>
             <li class="active treeview menu-open">
@@ -34,7 +34,7 @@
                     foreach ($methods as $method)
                     {
                     ?>
-                        <li><a href="<?php echo base_url();?>index.php/"><i class="fa fa-circle-o"></i> <?php echo ucfirst( preg_replace('/[A-Z]/', ' $0', $method)  ); ?></a></li>
+                        <li><a href="<?php echo base_url()."index.php/". str_replace( '.php', '',  lcfirst($controller) )."/".$method;?>"><i class="fa fa-circle-o"></i> <?php echo ucfirst( preg_replace('/[A-Z]/', ' $0', $method)  ); ?></a></li>
                     <?php
                     }
                     ?>
